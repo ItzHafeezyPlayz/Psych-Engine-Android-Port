@@ -368,6 +368,31 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
+                        case 'nevada-train':
+
+			var sky:BGSprite = new BGSprite('nevada/SKY', 200, 0);
+			sky.setGraphicSize(Std.int(sky.width * 1.6));
+			add(sky);
+
+			var buildings = new FlxBackdrop(Paths.image('nevada/FAR_BACKGROUND'), 0, 0, true, false);
+			buildings.updateHitbox();
+			buildings.screenCenter();
+			add(buildings);
+			buildings.offset.x -= 500;
+			buildings.offset.y -= 120;
+			buildings.velocity.x += 5000;
+
+			var train:FlxSprite = new FlxSprite(-1000, 200);
+			train.frames = Paths.getSparrowAtlas('nevada/TRAIN');
+			train.animation.addByPrefix('BOP', 'TRAIN ANIN', 24, true);
+			if(curBeat % 4 == 0)
+				{
+					train.animation.play('BOP', true);
+				}
+			add(train);
+
+		}
+
 			case 'stage': //Week 1
 				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
 				add(bg);
