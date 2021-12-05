@@ -390,8 +390,8 @@ class PlayState extends MusicBeatState
 					train.animation.play('BOP', true);
 				}
 			add(train);
-
-		}
+                     }
+	
 			case 'stage': //Week 1
 				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
 				add(bg);
